@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  grafana:
+    image: grafana/grafana:5.1.0
+    ports:
+      - 3000:3000
+    user: "104"
+    environment:
+      GF_AUTH_GENERIC_OAUTH_ENABLED: 'True'
+      GF_AUTH_GENERIC_OAUTH_ALLOW_SIGN_UP: 'True'
+      GF_AUTH_GENERIC_OAUTH_ALLOWED_DOMAINS: '0.0.0.0'
+      GF_SERVER_ENFORCE_DOMAIN: 'True'
+      GF_AUTH_GENERIC_OAUTH_NAME: please-open.it
+      GF_AUTH_GENERIC_OAUTH_CLIENT_ID: grafana
+      GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET: b1705755-10fc-40f3-bc1d-204dcf760fb6
+      GF_AUTH_GENERIC_OAUTH_SCOPES: openid profile email
+      GF_AUTH_GENERIC_OAUTH_AUTH_URL: https://app.please-open.it/auth/realms/122aa842-0cf0-48e6-a5bc-cca00254a9bb/protocol/openid-connect/auth
+      GF_AUTH_GENERIC_OAUTH_TOKEN_URL: https://app.please-open.it/auth/realms/122aa842-0cf0-48e6-a5bc-cca00254a9bb/protocol/openid-connect/token
+      GF_AUTH_GENERIC_OAUTH_API_URL: https://app.please-open.it/auth/realms/122aa842-0cf0-48e6-a5bc-cca00254a9bb/protocol/openid-connect/userinfo
+     

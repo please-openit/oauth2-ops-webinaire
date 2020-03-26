@@ -1,0 +1,17 @@
+version: '2'
+services:
+  jenkins:
+    image: 'bitnami/jenkins:2'
+    ports:
+      - '180:8080'
+      - '1443:8443'
+      - '50000:50000'
+
+  nginx:
+    image: registry.please-open.it/misc/nginx-oauth:master
+    restart: always
+    volumes:
+      - "./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf"
+    ports:
+      - "181:80"
+

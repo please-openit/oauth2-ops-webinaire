@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  files_api:
+    image: registry.please-open.it/misc/nginx-oauth:master
+    restart: always
+    volumes:
+      - "./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf"
+      - "./files/:/files/"
+    ports:
+      - "127.0.0.1:380:80"

@@ -1,0 +1,8 @@
+{
+    client-id: "ssh",
+    client-secret: "8d012a0a-39aa-4ea5-97b2-133fc0236057",
+    scopes: ["openid"],
+    endpoint-token-url: "https://app.please-open.it/auth/realms/122aa842-0cf0-48e6-a5bc-cca00254a9bb/protocol/openid-connect/token",
+    extra-parameters: {
+    },
+}
